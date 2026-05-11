@@ -37,7 +37,7 @@ export function Footer() {
         </div>
         <div>
           <h5 className="text-xs uppercase tracking-[0.25em] text-primary">Connect</h5>
-          <p className="mt-4 text-sm text-muted-foreground">Nairobi, Kenya · concierge@azariahgems.co</p>
+          <p className="mt-4 text-sm text-muted-foreground">Nairobi, Kenya · nahelmgitonga@gmail.com</p>
           <p className="mt-1 text-sm text-muted-foreground">WhatsApp · +254 716 838572</p>
           <div className="mt-4 flex gap-3">
             {SOCIALS.map(({ Icon, href, label }) => (

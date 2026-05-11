@@ -30,7 +30,7 @@ function Contact() {
         <div className="mt-16 grid gap-10 md:grid-cols-5">
           <div className="md:col-span-2 space-y-5">
             {[
-              { icon: Mail, t: "Email", d: "concierge@azariahgems.co" },
+              { icon: Mail, t: "Email", d: "nahelmgitonga@gmail.com" },
               { icon: Phone, t: "WhatsApp", d: "+254 716 838572" },
               { icon: MapPin, t: "Atelier", d: "Westlands, Nairobi · By appointment" },
             ].map(({ icon: Icon, t, d }) => (

@@ -31,7 +31,7 @@ function reply(input: string): Msg {
   if (/order|track|delivery|ship/.test(t))
     return { role: "bot", text: "Orders are dispatched within 24h in Kenya, 3–5 days worldwide. Share your order number with our concierge to track.", suggestions: [{ label: "WhatsApp Concierge", to: "/contact" }] };
   if (/price|cost|how much|expensive/.test(t))
-    return { role: "bot", text: "Pieces start at KSh 18,500 and go up to KSh 245,000 for bridal sets. We also offer flexible payment plans.", suggestions: [{ label: "Browse Collection", to: "/collections" }] };
+    return { role: "bot", text: "Pieces start at KSh 185 and go up to KSh 1,000 for bridal sets. We also offer flexible payment plans.", suggestions: [{ label: "Browse Collection", to: "/collections" }] };
   if (/size|sizing|fit/.test(t))
     return { role: "bot", text: "Free resizing within 30 days on all rings. Bracelets are adjustable, chains come in 45cm and 50cm." };
   if (/payment|pay|m-?pesa|paypal|card/.test(t))
@@ -39,7 +39,7 @@ function reply(input: string): Msg {
   if (/return|refund/.test(t))
     return { role: "bot", text: "14-day returns on unworn pieces. Bespoke and bridal items are final sale." };
   if (/contact|whatsapp|email|phone/.test(t))
-    return { role: "bot", text: "WhatsApp +254 716 838572 or email concierge@azariahgems.co — we reply within 24 hours.", suggestions: [{ label: "Contact Page", to: "/contact" }] };
+    return { role: "bot", text: "WhatsApp +254 716 838572 or email nahelmgitonga@gmail.com — we reply within 24 hours.", suggestions: [{ label: "Contact Page", to: "/contact" }] };
   return {
     role: "bot",
     text: "I'd love to help with that. Would you like me to connect you to our human concierge on WhatsApp?",

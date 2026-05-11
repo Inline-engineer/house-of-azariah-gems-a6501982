@@ -16,10 +16,10 @@ export const Route = createFileRoute("/new-arrivals")({
 });
 
 const drops = [
-  { name: "Empress Emerald Halo Ring", price: "KSh 89,500", img: catRings },
-  { name: "Azariah Drop Earrings", price: "KSh 32,900", img: catEarrings },
-  { name: "Heritage Cuban Chain", price: "KSh 54,000", img: catChains },
-  { name: "Eternity Emerald Bracelet", price: "KSh 76,400", img: catBracelets },
+  { name: "Empress Emerald Halo Ring", price: "KSh 890", img: catRings },
+  { name: "Azariah Drop Earrings", price: "KSh 329", img: catEarrings },
+  { name: "Heritage Cuban Chain", price: "KSh 540", img: catChains },
+  { name: "Eternity Emerald Bracelet", price: "KSh 760", img: catBracelets },
 ];
 
 function NewArrivals() {

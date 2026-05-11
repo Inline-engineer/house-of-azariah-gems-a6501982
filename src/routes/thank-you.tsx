@@ -45,7 +45,7 @@ function ThankYou() {
             <Mail className="h-5 w-5 text-primary" />
             <div>
               <div className="font-display">Concierge ready</div>
-              <div className="text-xs text-muted-foreground">concierge@azariahgems.co</div>
+              <div className="text-xs text-muted-foreground">nahelmgitonga@gmail.com</div>
             </div>
           </div>
         </div>
