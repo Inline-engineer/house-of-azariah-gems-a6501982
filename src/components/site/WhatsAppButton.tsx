@@ -1,9 +1,21 @@
 import { MessageCircle } from "lucide-react";
 
+const WHATSAPP_URL =
+  "https://wa.me/254716838572?text=" +
+  encodeURIComponent("Hello House of Azariah Gems, I'd like to enquire about a piece.");
+
 export function WhatsAppButton() {
+  const open = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Open in top-level window so the preview iframe never tries to load
+    // api.whatsapp.com (which blocks framing).
+    window.open(WHATSAPP_URL, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <a
-      href="https://wa.me/254716838572?text=Hello%20House%20of%20Azariah%20Gems%2C%20I%27d%20like%20to%20enquire%20about%20a%20piece."
+      href={WHATSAPP_URL}
+      onClick={open}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
