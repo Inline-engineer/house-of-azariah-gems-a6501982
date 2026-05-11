@@ -31,7 +31,7 @@ function Contact() {
           <div className="md:col-span-2 space-y-5">
             {[
               { icon: Mail, t: "Email", d: "concierge@azariahgems.co" },
-              { icon: Phone, t: "WhatsApp", d: "+254 700 000 000" },
+              { icon: Phone, t: "WhatsApp", d: "+254 716 838572" },
               { icon: MapPin, t: "Atelier", d: "Westlands, Nairobi · By appointment" },
             ].map(({ icon: Icon, t, d }) => (
               <div key={t} className="flex gap-4 rounded-xl border border-border bg-card/60 p-6">

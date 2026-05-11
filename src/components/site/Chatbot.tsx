@@ -39,7 +39,7 @@ function reply(input: string): Msg {
   if (/return|refund/.test(t))
     return { role: "bot", text: "14-day returns on unworn pieces. Bespoke and bridal items are final sale." };
   if (/contact|whatsapp|email|phone/.test(t))
-    return { role: "bot", text: "WhatsApp +254 700 000 000 or email concierge@azariahgems.co — we reply within 24 hours.", suggestions: [{ label: "Contact Page", to: "/contact" }] };
+    return { role: "bot", text: "WhatsApp +254 716 838572 or email concierge@azariahgems.co — we reply within 24 hours.", suggestions: [{ label: "Contact Page", to: "/contact" }] };
   return {
     role: "bot",
     text: "I'd love to help with that. Would you like me to connect you to our human concierge on WhatsApp?",
