@@ -119,8 +119,9 @@ function Checkout() {
 
               <div className="mt-6">
                 {pay === "mpesa" && (
-                  <div className="rounded-lg border border-border bg-background/40 p-4 text-sm text-foreground/85">
-                    An <strong>STK push</strong> will be sent to your phone for {formatKsh(total)}. Approve to confirm.
+                  <div className="rounded-lg border border-border bg-background/40 p-4 text-sm text-foreground/85 space-y-1">
+                    <p>Send <strong>{formatKsh(total)}</strong> via M-Pesa to <strong>+254 716 838572</strong> (Grace Gitonga).</p>
+                    <p className="text-foreground/70">Use your order name as the reference. We'll confirm via WhatsApp within minutes.</p>
                   </div>
                 )}
                 {pay === "card" && (
