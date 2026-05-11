@@ -1,5 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, Music2, Twitter } from "lucide-react";
+
+const SOCIALS = [
+  { Icon: Instagram, href: "https://instagram.com/houseofazariahgems", label: "Instagram" },
+  { Icon: Music2, href: "https://www.tiktok.com/@houseofazariahgems", label: "TikTok" },
+  { Icon: Twitter, href: "https://x.com/azariahgems", label: "X (Twitter)" },
+  { Icon: Facebook, href: "https://facebook.com/houseofazariahgems", label: "Facebook" },
+];
 
 export function Footer() {
   return (
