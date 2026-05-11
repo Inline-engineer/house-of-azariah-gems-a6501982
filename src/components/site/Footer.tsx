@@ -1,5 +1,12 @@
 import { Link } from "@tanstack/react-router";
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, Music2, Twitter } from "lucide-react";
+
+const SOCIALS = [
+  { Icon: Instagram, href: "https://instagram.com/houseofazariahgems", label: "Instagram" },
+  { Icon: Music2, href: "https://www.tiktok.com/@houseofazariahgems", label: "TikTok" },
+  { Icon: Twitter, href: "https://x.com/azariahgems", label: "X (Twitter)" },
+  { Icon: Facebook, href: "https://facebook.com/houseofazariahgems", label: "Facebook" },
+];
 
 export function Footer() {
   return (
@@ -31,9 +38,10 @@ export function Footer() {
         <div>
           <h5 className="text-xs uppercase tracking-[0.25em] text-primary">Connect</h5>
           <p className="mt-4 text-sm text-muted-foreground">Nairobi, Kenya · concierge@azariahgems.co</p>
+          <p className="mt-1 text-sm text-muted-foreground">WhatsApp · +254 716 838572</p>
           <div className="mt-4 flex gap-3">
-            {[Instagram, Facebook].map((Icon, i) => (
-              <a key={i} href="#" aria-label="Social" className="grid h-9 w-9 place-items-center rounded-full border border-border hover:border-gold hover:text-primary transition-colors">
+            {SOCIALS.map(({ Icon, href, label }) => (
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="grid h-9 w-9 place-items-center rounded-full border border-border hover:border-gold hover:text-primary transition-colors">
                 <Icon className="h-4 w-4" />
               </a>
             ))}
