@@ -7,7 +7,7 @@ import { useMemo, useState } from "react";
 export const Route = createFileRoute("/collections")({
   head: () => ({
     meta: [
-      { title: "Collections — House of Azariah Gems" },
+      { title: "Collections, House of Azariah Gems" },
       { name: "description", content: "Explore earrings, chains, rings, watches, bridal jewelry and more from House of Azariah Gems." },
     ],
   }),

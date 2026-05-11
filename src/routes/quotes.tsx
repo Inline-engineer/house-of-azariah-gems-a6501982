@@ -5,7 +5,7 @@ import { Quote } from "lucide-react";
 export const Route = createFileRoute("/quotes")({
   head: () => ({
     meta: [
-      { title: "Daily Business Quotes — House of Azariah Gems" },
+      { title: "Daily Business Quotes, House of Azariah Gems" },
       { name: "description", content: "A daily dose of luxury, ambition and feminine power from House of Azariah Gems." },
     ],
   }),
@@ -13,12 +13,12 @@ export const Route = createFileRoute("/quotes")({
 });
 
 const quotes = [
-  { q: "She wore her ambition the way other women wore perfume — quietly, unforgettably.", a: "Grace Gitonga" },
+  { q: "She wore her ambition the way other women wore perfume, quietly, unforgettably.", a: "Grace Gitonga" },
   { q: "Luxury is the discipline of doing ordinary things extraordinarily well.", a: "House Maxim" },
   { q: "Build the life that deserves the jewelry you'd save for one day.", a: "Azariah Journal" },
   { q: "A woman with a vision needs no permission, only patience and pearls.", a: "Grace Gitonga" },
   { q: "Your reputation is the most expensive jewel you'll ever wear. Polish it daily.", a: "House Maxim" },
-  { q: "Negotiate like the gold around your neck — soft, warm, and impossible to dismiss.", a: "Azariah Journal" },
+  { q: "Negotiate like the gold around your neck, soft, warm, and impossible to dismiss.", a: "Azariah Journal" },
 ];
 
 function Quotes() {
@@ -37,7 +37,7 @@ function Quotes() {
             <figure key={i} className="relative overflow-hidden rounded-2xl border border-border bg-card/60 p-10 shadow-deep">
               <Quote className="absolute -right-4 -top-4 h-24 w-24 text-primary/15" />
               <blockquote className="font-display text-2xl italic leading-snug md:text-3xl">"{q.q}"</blockquote>
-              <figcaption className="mt-6 text-xs uppercase tracking-[0.3em] text-primary">— {q.a}</figcaption>
+              <figcaption className="mt-6 text-xs uppercase tracking-[0.3em] text-primary">,  {q.a}</figcaption>
             </figure>
           ))}
         </div>

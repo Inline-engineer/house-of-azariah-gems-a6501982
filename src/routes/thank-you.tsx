@@ -7,7 +7,7 @@ const search = z.object({ order: z.string().optional() });
 
 export const Route = createFileRoute("/thank-you")({
   validateSearch: (s) => search.parse(s),
-  head: () => ({ meta: [{ title: "Thank You — House of Azariah Gems" }, { name: "description", content: "Order confirmation." }] }),
+  head: () => ({ meta: [{ title: "Thank You, House of Azariah Gems" }, { name: "description", content: "Order confirmation." }] }),
   component: ThankYou,
 });
 

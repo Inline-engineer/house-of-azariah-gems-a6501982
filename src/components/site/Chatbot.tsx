@@ -6,7 +6,7 @@ type Msg = { role: "user" | "bot"; text: string; suggestions?: { label: string; 
 
 const intro: Msg = {
   role: "bot",
-  text: "Welcome to House of Azariah Gems. I'm Aria, your private concierge. How may I help — recommendations, an order update, or sizing?",
+  text: "Welcome to House of Azariah Gems. I'm Aria, your private concierge. How may I help, recommendations, an order update, or sizing?",
   suggestions: [
     { label: "Bestsellers", to: "/collections" },
     { label: "Bridal", to: "/collections" },
@@ -17,29 +17,29 @@ const intro: Msg = {
 function reply(input: string): Msg {
   const t = input.toLowerCase();
   if (/hi|hello|hey|jambo|habari/.test(t))
-    return { role: "bot", text: "Karibu! Tell me what you're looking for — earrings, a ring, a chain, a bridal set?" };
+    return { role: "bot", text: "Karibu! Tell me what you're looking for, earrings, a ring, a chain, a bridal set?" };
   if (/bridal|wedding/.test(t))
     return { role: "bot", text: "Our Royal Bridal Set is a 3-piece ceremonial regalia with hand-set emeralds. Would you like to view it?", suggestions: [{ label: "View Bridal Set", to: "/product/$id" }] };
   if (/ring/.test(t))
-    return { role: "bot", text: "The Empress Emerald Halo Ring is the favourite of the season — a 3.2ct emerald in 18k gold.", suggestions: [{ label: "View Ring", to: "/collections" }] };
+    return { role: "bot", text: "The Empress Emerald Halo Ring is the favourite of the season, a 3.2ct emerald in 18k gold.", suggestions: [{ label: "View Ring", to: "/collections" }] };
   if (/earring/.test(t))
     return { role: "bot", text: "Try the Azariah Drop Earrings for evening, or the Nairobi Hoops for daily wear.", suggestions: [{ label: "Shop Earrings", to: "/collections" }] };
   if (/chain|necklace/.test(t))
-    return { role: "bot", text: "Heritage Cuban Chain in 18k solid gold — a piece you'll never take off.", suggestions: [{ label: "Shop Chains", to: "/collections" }] };
+    return { role: "bot", text: "Heritage Cuban Chain in 18k solid gold, a piece you'll never take off.", suggestions: [{ label: "Shop Chains", to: "/collections" }] };
   if (/watch/.test(t))
     return { role: "bot", text: "The Maison Gold Watch is a numbered edition of 200 with Swiss movement.", suggestions: [{ label: "Shop Watches", to: "/collections" }] };
   if (/order|track|delivery|ship/.test(t))
-    return { role: "bot", text: "Orders are dispatched within 24h in Kenya, 3–5 days worldwide. Share your order number with our concierge to track.", suggestions: [{ label: "WhatsApp Concierge", to: "/contact" }] };
+    return { role: "bot", text: "Orders are dispatched within 24h in Kenya, 3-5 days worldwide. Share your order number with our concierge to track.", suggestions: [{ label: "WhatsApp Concierge", to: "/contact" }] };
   if (/price|cost|how much|expensive/.test(t))
     return { role: "bot", text: "Pieces start at KSh 185 and go up to KSh 1,000 for bridal sets. We also offer flexible payment plans.", suggestions: [{ label: "Browse Collection", to: "/collections" }] };
   if (/size|sizing|fit/.test(t))
     return { role: "bot", text: "Free resizing within 30 days on all rings. Bracelets are adjustable, chains come in 45cm and 50cm." };
   if (/payment|pay|m-?pesa|paypal|card/.test(t))
-    return { role: "bot", text: "We accept M-Pesa, Visa, Mastercard and PayPal at checkout — fully secure." };
+    return { role: "bot", text: "We accept M-Pesa, Visa, Mastercard and PayPal at checkout, fully secure." };
   if (/return|refund/.test(t))
     return { role: "bot", text: "14-day returns on unworn pieces. Bespoke and bridal items are final sale." };
   if (/contact|whatsapp|email|phone/.test(t))
-    return { role: "bot", text: "WhatsApp +254 716 838572 or email nahelmgitonga@gmail.com — we reply within 24 hours.", suggestions: [{ label: "Contact Page", to: "/contact" }] };
+    return { role: "bot", text: "WhatsApp +254 716 838572 or email nahelmgitonga@gmail.com, we reply within 24 hours.", suggestions: [{ label: "Contact Page", to: "/contact" }] };
   return {
     role: "bot",
     text: "I'd love to help with that. Would you like me to connect you to our human concierge on WhatsApp?",
