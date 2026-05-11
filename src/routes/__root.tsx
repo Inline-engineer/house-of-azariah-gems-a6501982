@@ -7,6 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { ShopProvider } from "@/lib/shop";
 
 import appCss from "../styles.css?url";
 
@@ -72,14 +73,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "House of Azariah Gems — Luxury Jewelry" },
+      { name: "description", content: "Emerald & gold heirloom jewelry handcrafted in Nairobi by Grace Gitonga." },
+      { name: "author", content: "House of Azariah Gems" },
+      { property: "og:title", content: "House of Azariah Gems — Luxury Jewelry" },
+      { property: "og:description", content: "Emerald & gold heirloom jewelry handcrafted in Nairobi by Grace Gitonga." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "House of Azariah Gems — Luxury Jewelry" },
+      { name: "twitter:description", content: "Emerald & gold heirloom jewelry handcrafted in Nairobi by Grace Gitonga." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/5DO7ncfYKTeaE9ihSry53di82RA3/social-images/social-1778493247496-WhatsApp_Image_2026-05-11_at_11.30.17_AM.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/5DO7ncfYKTeaE9ihSry53di82RA3/social-images/social-1778493247496-WhatsApp_Image_2026-05-11_at_11.30.17_AM.webp" },
     ],
     links: [
       {
@@ -113,7 +118,9 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <ShopProvider>
+        <Outlet />
+      </ShopProvider>
     </QueryClientProvider>
   );
 }
