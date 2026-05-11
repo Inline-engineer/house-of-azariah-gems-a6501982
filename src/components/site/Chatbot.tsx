@@ -31,7 +31,7 @@ function reply(input: string): Msg {
   if (/order|track|delivery|ship/.test(t))
     return { role: "bot", text: "Orders are dispatched within 24h in Kenya, 3–5 days worldwide. Share your order number with our concierge to track.", suggestions: [{ label: "WhatsApp Concierge", to: "/contact" }] };
   if (/price|cost|how much|expensive/.test(t))
-    return { role: "bot", text: "Pieces start at KSh 18,500 and go up to KSh 245,000 for bridal sets. We also offer flexible payment plans.", suggestions: [{ label: "Browse Collection", to: "/collections" }] };
+    return { role: "bot", text: "Pieces start at KSh 185 and go up to KSh 1,000 for bridal sets. We also offer flexible payment plans.", suggestions: [{ label: "Browse Collection", to: "/collections" }] };
   if (/size|sizing|fit/.test(t))
     return { role: "bot", text: "Free resizing within 30 days on all rings. Bracelets are adjustable, chains come in 45cm and 50cm." };
   if (/payment|pay|m-?pesa|paypal|card/.test(t))
