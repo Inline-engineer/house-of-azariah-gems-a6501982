@@ -70,7 +70,7 @@ export const PRODUCTS: Product[] = [
     img: catBracelets,
     gallery: [catBracelets, catRings],
     description: "Twenty-four prong-set emeralds wrap the wrist in a single fluid line of green fire and gold.",
-    details: ["18k Yellow Gold", "24 oval emeralds (5.2ct total)", "Adjustable 16–19cm", "Includes velvet pouch"],
+    details: ["18k Yellow Gold", "24 oval emeralds (5.2ct total)", "Adjustable 16-19cm", "Includes velvet pouch"],
     popularity: 91,
     createdAt: Date.now() - 1000 * 60 * 60 * 24 * 4,
   },

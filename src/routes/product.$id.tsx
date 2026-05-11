@@ -10,7 +10,7 @@ export const Route = createFileRoute("/product/$id")({
     const p = findProduct(params.id);
     return {
       meta: [
-        { title: p ? `${p.name} — House of Azariah Gems` : "Product — House of Azariah Gems" },
+        { title: p ? `${p.name}, House of Azariah Gems` : "Product, House of Azariah Gems" },
         { name: "description", content: p?.description ?? "Luxury jewelry by House of Azariah Gems." },
         { property: "og:title", content: p?.name ?? "House of Azariah Gems" },
         { property: "og:description", content: p?.description ?? "Luxury jewelry." },

@@ -4,7 +4,7 @@ import { useShop, formatKsh } from "@/lib/shop";
 import { Minus, Plus, Trash2, ShoppingBag, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/cart")({
-  head: () => ({ meta: [{ title: "Cart — House of Azariah Gems" }, { name: "description", content: "Your selected pieces." }] }),
+  head: () => ({ meta: [{ title: "Cart, House of Azariah Gems" }, { name: "description", content: "Your selected pieces." }] }),
   component: Cart,
 });
 

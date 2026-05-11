@@ -13,11 +13,11 @@ import { useEffect, useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "House of Azariah Gems — Luxury Jewelry by Grace Gitonga" },
+      { title: "House of Azariah Gems, Luxury Jewelry by Grace Gitonga" },
       {
         name: "description",
         content:
-          "Discover heirloom-grade earrings, chains, rings, watches and bridal jewelry from House of Azariah Gems — Nairobi's house of emerald and gold luxury.",
+          "Discover heirloom-grade earrings, chains, rings, watches and bridal jewelry from House of Azariah Gems, Nairobi's house of emerald and gold luxury.",
       },
       { property: "og:title", content: "House of Azariah Gems" },
       { property: "og:description", content: "Emerald & gold luxury jewelry, handcrafted in Nairobi." },
@@ -42,7 +42,7 @@ import { formatKsh } from "@/lib/shop";
 const arrivals = [...PRODUCTS].sort((a, b) => b.createdAt - a.createdAt).slice(0, 4);
 
 const quotes = [
-  { q: "She wore her ambition the way other women wore perfume — quietly, unforgettably.", a: "Grace Gitonga" },
+  { q: "She wore her ambition the way other women wore perfume, quietly, unforgettably.", a: "Grace Gitonga" },
   { q: "Luxury is the discipline of doing ordinary things extraordinarily well.", a: "House Maxim" },
   { q: "Build the life that deserves the jewelry you'd save for one day.", a: "Azariah Journal" },
 ];
@@ -225,7 +225,7 @@ function Home() {
           <div className="mt-8 grid gap-5">
             {[
               { icon: Gem, t: "Conflict-free Gemstones", d: "Traceable from mine to setting." },
-              { icon: ShieldCheck, t: "Lifetime Restoration", d: "Polish, replate, and repair — always on the house." },
+              { icon: ShieldCheck, t: "Lifetime Restoration", d: "Polish, replate, and repair, always on the house." },
               { icon: Truck, t: "Concierge Delivery", d: "White-glove worldwide shipping in signature emerald box." },
             ].map(({ icon: Icon, t, d }) => (
               <div key={t} className="flex gap-4">
@@ -249,7 +249,7 @@ function Home() {
           <blockquote key={quoteIdx} className="mt-6 animate-fade-up font-display text-2xl italic leading-snug md:text-4xl">
             “{quotes[quoteIdx].q}”
           </blockquote>
-          <div className="mt-6 text-xs uppercase tracking-[0.3em] text-primary">— {quotes[quoteIdx].a}</div>
+          <div className="mt-6 text-xs uppercase tracking-[0.3em] text-primary">,  {quotes[quoteIdx].a}</div>
           <Link to="/quotes" className="mt-8 inline-block text-sm uppercase tracking-[0.2em] text-foreground/80 hover:text-primary">
             More Daily Quotes →
           </Link>

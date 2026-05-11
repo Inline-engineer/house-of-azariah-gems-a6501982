@@ -8,7 +8,7 @@ import catBracelets from "@/assets/cat-bracelets.jpg";
 export const Route = createFileRoute("/new-arrivals")({
   head: () => ({
     meta: [
-      { title: "New Arrivals — House of Azariah Gems" },
+      { title: "New Arrivals, House of Azariah Gems" },
       { name: "description", content: "The latest emerald & gold drops from the Azariah atelier." },
     ],
   }),

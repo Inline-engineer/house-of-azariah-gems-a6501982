@@ -5,7 +5,7 @@ import { CreditCard, Smartphone, Wallet, Lock } from "lucide-react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/checkout")({
-  head: () => ({ meta: [{ title: "Checkout — House of Azariah Gems" }, { name: "description", content: "Secure checkout with M-Pesa, Card or PayPal." }] }),
+  head: () => ({ meta: [{ title: "Checkout, House of Azariah Gems" }, { name: "description", content: "Secure checkout with M-Pesa, Card or PayPal." }] }),
   component: Checkout,
 });
 
