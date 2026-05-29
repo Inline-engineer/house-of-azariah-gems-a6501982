@@ -71,7 +71,8 @@ export function ProductForm({ initial, onSubmit, submitting }: {
       setV((p) => ({ ...p, primary_image: p.primary_image || urls[0] }));
       toast.success(`Uploaded ${urls.length} image${urls.length > 1 ? "s" : ""}`);
       if (urls.length > 1 && initial.id) {
-        await supabase.from("product_images").insert(urls.slice(1).map((u, i) => ({ product_id: initial.id, url: u, sort_order: i })));
+        const pid = initial.id;
+        await supabase.from("product_images").insert(urls.slice(1).map((u, i) => ({ product_id: pid, url: u, sort_order: i })));
       }
     } catch (e) {
       toast.error((e as Error).message);
