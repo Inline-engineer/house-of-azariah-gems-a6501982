@@ -36,11 +36,12 @@ export const Route = createFileRoute("/product/$id")({
   ),
   errorComponent: ({ error, reset }) => {
     const router = useRouter();
+    console.error(error);
     return (
       <Layout>
         <div className="mx-auto max-w-xl px-6 py-32 text-center">
           <h1 className="font-display text-3xl">Something went wrong</h1>
-          <p className="mt-3 text-sm text-muted-foreground">{error.message}</p>
+          <p className="mt-3 text-sm text-muted-foreground">We couldn't load this product right now.</p>
           <button onClick={() => { router.invalidate(); reset(); }} className="mt-6 rounded-full border border-gold/60 px-6 py-3 text-sm uppercase tracking-[0.2em]">
             Try again
           </button>
