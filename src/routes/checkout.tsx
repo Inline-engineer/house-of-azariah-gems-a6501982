@@ -94,11 +94,26 @@ function Checkout() {
                   <Field label="Postal code" />
                 </div>
                 <div>
-                  <label className="block text-xs uppercase tracking-[0.2em] text-primary">Country</label>
-                  <select required className="mt-2 w-full rounded-md border border-border bg-background/50 px-4 py-3 text-sm focus:border-gold focus:outline-none">
-                    <option>Kenya</option><option>Uganda</option><option>Tanzania</option><option>Rwanda</option>
-                    <option>Nigeria</option><option>South Africa</option><option>United Kingdom</option><option>United States</option><option>UAE</option>
+                  <label className="block text-xs uppercase tracking-[0.2em] text-primary">Shipping destination</label>
+                  <select
+                    required
+                    value={selectedZone?.id ?? ""}
+                    onChange={(e) => setZoneId(e.target.value)}
+                    className="mt-2 w-full rounded-md border border-border bg-background/50 px-4 py-3 text-sm focus:border-gold focus:outline-none"
+                  >
+                    {zones.length === 0 && <option value="">Loading zones...</option>}
+                    {zones.map((z) => (
+                      <option key={z.id} value={z.id}>
+                        {z.name}{z.region ? ` — ${z.region}` : ""} · {formatKsh(Number(z.fee))}
+                        {z.free_over != null ? ` (free over ${formatKsh(Number(z.free_over))})` : ""}
+                      </option>
+                    ))}
                   </select>
+                  {selectedZone && (
+                    <p className="mt-2 text-[11px] text-foreground/70">
+                      Delivery to <strong>{selectedZone.name}</strong>: {shipping === 0 ? "Free shipping" : formatKsh(shipping)}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
