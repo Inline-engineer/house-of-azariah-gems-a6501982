@@ -2,7 +2,9 @@ import { createFileRoute, Link, useRouter } from "@tanstack/react-router";
 import { Layout } from "@/components/site/Layout";
 import { useShop, formatKsh } from "@/lib/shop";
 import { CreditCard, Smartphone, Wallet, Lock } from "lucide-react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Route = createFileRoute("/checkout")({
   head: () => ({ meta: [{ title: "Checkout, House of Azariah Gems" }, { name: "description", content: "Secure checkout with M-Pesa, Card or PayPal." }] }),
@@ -10,14 +12,33 @@ export const Route = createFileRoute("/checkout")({
 });
 
 type Pay = "mpesa" | "card" | "paypal";
+type Zone = { id: string; name: string; region: string | null; fee: number; free_over: number | null };
 
 function Checkout() {
   const { detailedCart, cartTotal, cartCount, clearCart } = useShop();
   const router = useRouter();
   const [pay, setPay] = useState<Pay>("mpesa");
   const [submitting, setSubmitting] = useState(false);
+  const [zoneId, setZoneId] = useState<string>("");
 
-  const shipping = cartTotal > 50000 ? 0 : 800;
+  const { data: zones = [] } = useQuery({
+    queryKey: ["shipping-zones"],
+    queryFn: async () => {
+      const { data } = await supabase
+        .from("shipping_zones")
+        .select("id,name,region,fee,free_over")
+        .eq("is_active", true)
+        .order("sort_order", { ascending: true });
+      return (data ?? []) as Zone[];
+    },
+  });
+
+  const selectedZone = useMemo(() => zones.find((z) => z.id === zoneId) ?? zones[0], [zones, zoneId]);
+  const shipping = useMemo(() => {
+    if (!selectedZone) return 0;
+    if (selectedZone.free_over != null && cartTotal >= Number(selectedZone.free_over)) return 0;
+    return Number(selectedZone.fee);
+  }, [selectedZone, cartTotal]);
   const total = cartTotal + shipping;
 
   if (cartCount === 0) {
@@ -73,11 +94,26 @@ function Checkout() {
                   <Field label="Postal code" />
                 </div>
                 <div>
-                  <label className="block text-xs uppercase tracking-[0.2em] text-primary">Country</label>
-                  <select required className="mt-2 w-full rounded-md border border-border bg-background/50 px-4 py-3 text-sm focus:border-gold focus:outline-none">
-                    <option>Kenya</option><option>Uganda</option><option>Tanzania</option><option>Rwanda</option>
-                    <option>Nigeria</option><option>South Africa</option><option>United Kingdom</option><option>United States</option><option>UAE</option>
+                  <label className="block text-xs uppercase tracking-[0.2em] text-primary">Shipping destination</label>
+                  <select
+                    required
+                    value={selectedZone?.id ?? ""}
+                    onChange={(e) => setZoneId(e.target.value)}
+                    className="mt-2 w-full rounded-md border border-border bg-background/50 px-4 py-3 text-sm focus:border-gold focus:outline-none"
+                  >
+                    {zones.length === 0 && <option value="">Loading zones...</option>}
+                    {zones.map((z) => (
+                      <option key={z.id} value={z.id}>
+                        {z.name}{z.region ? ` — ${z.region}` : ""} · {formatKsh(Number(z.fee))}
+                        {z.free_over != null ? ` (free over ${formatKsh(Number(z.free_over))})` : ""}
+                      </option>
+                    ))}
                   </select>
+                  {selectedZone && (
+                    <p className="mt-2 text-[11px] text-foreground/70">
+                      Delivery to <strong>{selectedZone.name}</strong>: {shipping === 0 ? "Free shipping" : formatKsh(shipping)}
+                    </p>
+                  )}
                 </div>
               </div>
             </div>
