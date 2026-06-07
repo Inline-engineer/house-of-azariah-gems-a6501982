@@ -457,6 +457,42 @@ export type Database = {
           },
         ]
       }
+      shipping_zones: {
+        Row: {
+          created_at: string
+          fee: number
+          free_over: number | null
+          id: string
+          is_active: boolean
+          name: string
+          region: string | null
+          sort_order: number
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          fee?: number
+          free_over?: number | null
+          id?: string
+          is_active?: boolean
+          name: string
+          region?: string | null
+          sort_order?: number
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          fee?: number
+          free_over?: number | null
+          id?: string
+          is_active?: boolean
+          name?: string
+          region?: string | null
+          sort_order?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
