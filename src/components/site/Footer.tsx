@@ -50,6 +50,8 @@ export function Footer() {
       </div>
       <div className="border-t border-border py-6 text-center text-xs text-muted-foreground">
         © {new Date().getFullYear()} House of Azariah Gems · Founded by Grace Gitonga
+        <span className="mx-2">·</span>
+        <Link to="/login" className="hover:text-primary">Admin login</Link>
       </div>
     </footer>
   );
